@@ -12,33 +12,40 @@ private UnityEvent onDeath;
 [SerializeField]
 private UnityEvent onDamageTaken;
 private float currentHealth;
-public float CurrentHealth  =>  currentHealth;
+public float CurrentHealth => currentHealth;
 public void InitializeHealth()
 {
-currentHealth = maxHealth;
-UpdateHealthBar();
+    currentHealth = maxHealth;
+    UpdateHealthBar();
 }
 private void UpdateHealthBar()
 {
-healthBar.value = currentHealth / maxHealth;
+    healthBar.value = currentHealth / maxHealth;
 }
-public void TakeDamage(float damage)
+public void Heal(float amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+        UpdateHealthBar();
+    }
+public void TakeDamage (float damage)
 {
-currentHealth -= damage;
-currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
-UpdateHealthBar();
-if (currentHealth <= 0f)
-{
-Die();
-}
-else
-{
-onDamageTaken?.Invoke();
-}
+    currentHealth -= damage;
+    currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+    UpdateHealthBar();
+    if (currentHealth <= 0f)
+    {
+    Die();
+    }
+    else
+    {
+    onDamageTaken?.Invoke();
+    }
 }
 public void Die()
-{
-onDeath?. Invoke();
+    {
+        onDeath?.Invoke();
+   
+    }
 }
-
-}
+ 
