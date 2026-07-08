@@ -1,6 +1,6 @@
 using UnityEngine;
  
-[CreateAssetMenu(fileName = "Gundata", menuName = "Scriptable Objects/GunData")]
+[CreateAssetMenu(fileName = "GunData", menuName = "Scriptable Objects/GunData")]
 public class Gundata : ScriptableObject
 {
     public float damage;
