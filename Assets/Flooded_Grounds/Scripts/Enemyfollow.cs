@@ -10,7 +10,7 @@ public class EnemyFollow : Enemy
     [SerializeField]
     private float pushForce = 5f;
     private bool isFollowing = true;
-    private void Start()
+      private void Start()
     {
         animator = GetComponent<Animator>();
         GetComponent<Health>().InitializeHealth();
@@ -38,10 +38,9 @@ public class EnemyFollow : Enemy
     }
     public override void Die()
     {
-        SoundManager.instance.Play("cacodemon_die");
         isFollowing = false;
        base.Die();
- 
+         SoundManager.instance.Play("cacodemon_die");
     }
     public IEnumerator DieCoroutine()
     {
@@ -52,6 +51,7 @@ public class EnemyFollow : Enemy
         private void Update()
     {
         if (!isFollowing) return;
+        if (CheckWin()) return;
         Vector3 targetPosition = new Vector3(player.position.x, yPosition, player.position.z);
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed*Time.deltaTime);
         transform.LookAt(targetPosition);
@@ -60,8 +60,8 @@ public class EnemyFollow : Enemy
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SoundManager.instance.Play("cacodemon_attack");
-            collision.gameObject.GetComponent<Player>().PushBack(transform, pushForce);
+             SoundManager.instance.Play("cacodemon_attack");
+            collision.gameObject.GetComponent<Player>().Pushback(transform, pushForce);
             collision.gameObject.GetComponent<Health>().TakeDamage(damage);
         }
     }
