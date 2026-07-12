@@ -653,6 +653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shotgun
       objectReference: {fileID: 0}
+    - target: {fileID: 6731669437508781960, guid: 6d7dd1f77f9ede54294e259036e1d337, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1576709915}
     - target: {fileID: 7440755071609562888, guid: 6d7dd1f77f9ede54294e259036e1d337, type: 3}
       propertyPath: m_LocalPosition.x
       value: -564.98
@@ -1070,7 +1074,7 @@ Transform:
   m_GameObject: {fileID: 121626454}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -528.93, y: 1.37004, z: 1004.09}
+  m_LocalPosition: {x: -528.93, y: 2.37, z: 1004.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10270,7 +10274,7 @@ Transform:
   m_GameObject: {fileID: 1442112161}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -548.3, y: 3.91, z: 1003.58}
+  m_LocalPosition: {x: -548.3, y: 2.3, z: 1003.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11026,6 +11030,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 910472684}
   m_SourcePrefab: {fileID: 100100000, guid: dd8db4e8ae042d44bb14b9605b044965, type: 3}
+--- !u!95 &1576709915 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5210958772280078242, guid: 6d7dd1f77f9ede54294e259036e1d337, type: 3}
+  m_PrefabInstance: {fileID: 45175764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1593023473
 GameObject:
   m_ObjectHideFlags: 0

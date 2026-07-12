@@ -18,6 +18,6 @@ MonoBehaviour:
   reloadTime: 2
   cartridgeSize: 1
   gunType: 1
-  shootSoundName: Disparo
-  reloadSoundName: reload
+  shootSoundName: Shotgun_shot
+  reloadSoundName: Shotgun_reload
   dropSoundName: throw
