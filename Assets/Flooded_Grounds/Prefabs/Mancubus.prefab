@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.02, y: 3.86}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2703559536356986149
 Canvas:
@@ -299,9 +299,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3493667425218645119}
   - component: {fileID: 7037870620984218717}
+  - component: {fileID: 4125277893388503587}
   - component: {fileID: 8232690186897899288}
   - component: {fileID: 766342236923116481}
-  - component: {fileID: 4125277893388503587}
   m_Layer: 0
   m_Name: Mancubus
   m_TagString: Enemy
@@ -345,6 +345,41 @@ MonoBehaviour:
   shootPivot: {fileID: 5848352338173194812}
   bulletPrefab: {fileID: 4682770968811647624, guid: 8e408816474d59d43808998d3a9400af, type: 3}
   speed: 3
+--- !u!114 &4125277893388503587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775904599064159972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c545786fc19134b8ddf0eadcc55b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  healthBar: {fileID: 8576916897270213758}
+  maxHealth: 100
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7037870620984218717}
+        m_TargetAssemblyTypeName: EnemyTank, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &8232690186897899288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -393,38 +428,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4125277893388503587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775904599064159972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c545786fc19134b8ddf0eadcc55b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  healthBar: {fileID: 8576916897270213758}
-  maxHealth: 100
-  onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7037870620984218717}
-        m_TargetAssemblyTypeName: EnemyTank, Assembly-CSharp
-        m_MethodName: Die
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDamageTaken:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &5868009403395774130
 GameObject:
   m_ObjectHideFlags: 0

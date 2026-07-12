@@ -14,7 +14,7 @@ public class EnemyTank : Enemy
     private float speed = 10f;
     private bool IsShooting = false;
     private float nextFireTime = 0f;
- 
+
     public override void OnEnable()
     {
         base.OnEnable();
@@ -29,13 +29,14 @@ public class EnemyTank : Enemy
     private void Update()
     {
         if (health.CurrentHealth <= 0) return;
+        if (CheckWin()) return;
         if (IsInRange())
         {
             IsShooting = true;
             if (Time.time >= nextFireTime)
             {
                 StartCoroutine(ShootCoroutine());
-                nextFireTime =  Time.time + fireRate;
+                nextFireTime = Time.time + fireRate;
             }
         }
         else if (!IsShooting)

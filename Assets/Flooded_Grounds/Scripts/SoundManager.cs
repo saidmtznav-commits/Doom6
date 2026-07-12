@@ -11,12 +11,15 @@ public class SoundManager : MonoBehaviour
     public AudioSource audioS;
     public AudioSource musicS;
     public AudioMixer masterMixer;
-    Dictionary<string,AudioClip> audioDictionary = new Dictionary<string,AudioClip>();
+    Dictionary<string, AudioClip> audioDictionary = new Dictionary<string, AudioClip>();
     void Awake()
     {
-        if(instance == null){
+        if (instance == null)
+        {
             instance = this;
-        }else if(instance != this){
+        }
+        else if (instance != this)
+        {
             Destroy(gameObject);
         }
         //DontDestroyOnLoad(gameObject);
@@ -43,12 +46,14 @@ public class SoundManager : MonoBehaviour
         audioS.PlayOneShot(audioDictionary[soundname], volume);
     }
 
-    public void Play(string soundname){
-        Play(soundname,1f,1f);
+    public void Play(string soundname)
+    {
+        Play(soundname, 1f, 1f);
     }
 
-    public void Play(string soundname,float volume){
-        Play(soundname,volume,1f);
+    public void Play(string soundname, float volume)
+    {
+        Play(soundname, volume, 1f);
     }
 
     public void PlayMusic(string soundname, float volume)
@@ -74,23 +79,27 @@ public class SoundManager : MonoBehaviour
         musicS.Play();
     }
 
-    public void PlayMusic(string soundname){
-        PlayMusic(soundname,1f);
+    public void PlayMusic(string soundname)
+    {
+        PlayMusic(soundname, 1f);
     }
 
-    public void PlayAudioClip(AudioClip audio,float pitch){
+    public void PlayAudioClip(AudioClip audio, float pitch)
+    {
         audioS.clip = audio;
         audioS.pitch = pitch;
         audioS.volume = 1f;
         audioS.Play();
     }
 
-    public void StopMusic(){
+    public void StopMusic()
+    {
         musicS.Stop();
     }
 
-    public void SetMixerVolume(float volume){
+    public void SetMixerVolume(float volume)
+    {
 
-        masterMixer.SetFloat("masterVolume",volume);
+        masterMixer.SetFloat("masterVolume", volume);
     }
 }

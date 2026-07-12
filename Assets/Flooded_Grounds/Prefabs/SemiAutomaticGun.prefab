@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6815181ee0bcaf4f8fadbd30c4f9452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rotate
-  rotationSpeed: {x: 0, y: 100, z: 0}
+  rotationSpeed: {x: 100, y: 0, z: 0}
   canRotate: 1
 --- !u!65 &9165842625560736903
 BoxCollider:
